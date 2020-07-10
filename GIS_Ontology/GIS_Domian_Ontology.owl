@@ -1,17 +1,390 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.semanticweb.org/diogo/ontologies/2020/6/GIS_Domain_Ontology"
+     xml:base="http://www.inf.ufrgs.br/bdi/ontologias/GIS_Domain_Ontology"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/diogo/ontologies/2020/6/GIS_Domain_Ontology">
+     ontologyIRI="http://www.inf.ufrgs.br/bdi/ontologias/GIS_Domain_Ontology">
+    <Prefix name="" IRI="http://www.inf.ufrgs.br/bdi/ontologias/GIS_Domain_Ontology"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl</Import>
+    <Import>http://purl.obolibrary.org/obo/geo.owl</Import>
+    <Import>http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl</Import>
+    <Import>http://purl.obolibrary.org/obo/pato/releases/2020-05-08/pato.owl</Import>
+    <Import>http://purl.obolibrary.org/obo/ro/releases/2020-02-26/ro.owl</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="pt">Ontologia para especificaão de Domínio aplicado ao Mapeamento Topográfico e outras aplicações GIS.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Baía"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Canal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Confluência"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Deposito"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Edificação"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Laguna"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Massa_Dágua"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Oceano"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ponto_Drenagem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ponto_Início_Drenagem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Porto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sumidouro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trecho_Drenagem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trecho_Massa_Dágua"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vertedouro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Água"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lago/Lagoa"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://purl.obolibrary.org/obo/GEO_000000373"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002473"/>
+            <Class IRI="#Água"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Baía"/>
+        <Class IRI="#Massa_Dágua"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Canal"/>
+        <Class IRI="#Trecho_Massa_Dágua"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Confluência"/>
+        <Class IRI="#Ponto_Drenagem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Deposito"/>
+        <Class IRI="#Edificação"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Edificação"/>
+        <Class IRI="http://purl.obolibrary.org/obo/GEO_000000371"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Laguna"/>
+        <Class IRI="#Trecho_Massa_Dágua"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Massa_Dágua"/>
+        <Class IRI="http://purl.obolibrary.org/obo/GEO_000000373"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Oceano"/>
+        <Class IRI="#Massa_Dágua"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ponto_Drenagem"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000018"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ponto_Início_Drenagem"/>
+        <Class IRI="#Ponto_Drenagem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Porto"/>
+        <Class IRI="http://purl.obolibrary.org/obo/GEO_000000378"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Porto"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002170"/>
+            <ObjectUnionOf>
+                <Class IRI="http://purl.obolibrary.org/obo/GEO_000000373"/>
+                <Class IRI="#Trecho_Drenagem"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rio"/>
+        <Class IRI="#Trecho_Massa_Dágua"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sumidouro"/>
+        <Class IRI="http://purl.obolibrary.org/obo/GEO_000000371"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trecho_Drenagem"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000026"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trecho_Massa_Dágua"/>
+        <Class IRI="http://purl.obolibrary.org/obo/GEO_000000373"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vertedouro"/>
+        <Class IRI="http://purl.obolibrary.org/obo/GEO_000000371"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Água"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000024"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lago/Lagoa"/>
+        <Class IRI="#Massa_Dágua"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000028"/>
+        <Class IRI="#Ponto_Início_Drenagem"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://purl.obolibrary.org/obo/GEO_000000373"/>
+        <Class IRI="http://purl.obolibrary.org/obo/GEO_000000375"/>
+        <Class IRI="#Edificação"/>
+        <Class IRI="#Sumidouro"/>
+        <Class IRI="#Vertedouro"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Baía"/>
+        <Class IRI="#Oceano"/>
+        <Class IRI="#Lago/Lagoa"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Canal"/>
+        <Class IRI="#Laguna"/>
+        <Class IRI="#Rio"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Confluência"/>
+        <Class IRI="#Ponto_Início_Drenagem"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Massa_Dágua"/>
+        <Class IRI="#Trecho_Massa_Dágua"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Sumidouro"/>
+        <Class IRI="#Vertedouro"/>
+    </DisjointClasses>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002170"/>
+    </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002473"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002473"/>
+    </TransitiveObjectProperty>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>https://pt.wikipedia.org/wiki/Corpo_de_%C3%A1gua</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>http://purl.obolibrary.org/obo/GEO_000000373</IRI>
+        <Literal xml:lang="pt">É qualquer acumulação significativa de água, usualmente cobrindo a Terra ou outro planeta. Pode ser um elemento natural ou artificial.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.obolibrary.org/obo/GEO_000000373</IRI>
+        <Literal xml:lang="pt">Corpo Dágua</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Código 1.04.3 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Baía</IRI>
+        <Literal xml:lang="pt">Reentrância fechada do mar na costa marinha com a forma de um golfo fechado, geralmente de dimensões menores do que este, e alargando-se à medida que adentra o continente.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Código 1.05.3 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Canal</IRI>
+        <Literal xml:lang="pt">Curso de água artificial que serve de interligação entre corpos de  água maiores, podendo ser navegável ou não, que excedam a 0,8 mm na escala da Carta.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Código 1.16 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Confluência</IRI>
+        <Literal xml:lang="pt">Junção de dois ou mais cursos d’água ou ainda a convergência para uma massa d’água, exceto baía, oceano ou enseada.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>https://pt.wikipedia.org/wiki/Edif%C3%ADcio</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Edificação</IRI>
+        <Literal xml:lang="pt">É uma construção com a finalidade de abrigar atividades humanas</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Código 1.05.3 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Laguna</IRI>
+        <Literal xml:lang="en">Águas quietas, separadas do mar apenas por uma restinga de areia e com o qual mantém comunicação intermitente. Esta situação ocorrerá no final de cursos d’águas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Código 1.04 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Massa_Dágua</IRI>
+        <Literal xml:lang="pt">Corpo d’água representado por polígono, tais como oceano, baías, enseadas, meandros abandonados, lagos, lagoas, e os açudes que não possuam fluxo d’água.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Código 1.04.3 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Oceano</IRI>
+        <Literal xml:lang="pt">Os oceanos compreendem a vasta extensão de águas salgadas que cobre a maior parte do planeta Terra.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Código 1.08 – EDGV 2.1.3 http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Ponto_Drenagem</IRI>
+        <Literal xml:lang="pt">Ponto de conectividade entre dois trechos de drenagem ou mais.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Código 1.14 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Ponto_Início_Drenagem</IRI>
+        <Literal xml:lang="pt">Ponto onde se inicia um trecho de drenagem, podendo ser uma nascente ou não.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>https://pt.wikipedia.org/wiki/Porto_(transporte)</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Porto</IRI>
+        <Literal xml:lang="pt">Um porto é uma área, abrigada das ondas e correntes, localizada à beira de um oceano, mar, lago ou rio, destinada à atracação de barcos e navios, com o pessoal e serviços necessários ao carregamento e descarregamento de carga e ao estoque temporário deles, como instalações para o movimento de pessoas e carga ao redor do setor portuário, e, em alguns casos, terminais especialmente designados para acomodação de passageiros.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal xml:lang="pt">Adaptado de Código 1.05.3 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Rio</IRI>
+        <Literal xml:lang="pt">Corrente contínua de volume significativo de água, mais ou menos caudalosa, que geralmente deságua outro TMD ou em Massa Dágua e que excedam a 0,8 mm na escala da Carta.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Adaptado de Código 1.11 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Sumidouro</IRI>
+        <Literal xml:lang="pt">Local de infiltração de um curso d’água</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Adaptado de Código 1.07 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Trecho_Drenagem</IRI>
+        <Literal xml:lang="pt">Corresponde ao eixo do corpo d’água, cuja geometria do tipo linha representa o fluxo d’água, permanente ou temporário, contido ou coincidente com um trecho de massa d’água capturado como linha, em função da escala de aquisição.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Código 1.05 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Trecho_Massa_Dágua</IRI>
+        <Literal xml:lang="pt">Segmentos de cursos d’água representados por polígonos, que possuem fluxo d’água.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Adaptado de Código 1.11 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Vertedouro</IRI>
+        <Literal xml:lang="pt">Local de afloramento (ressurgimento) de um curso d’água</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>https://pt.wikipedia.org/wiki/%C3%81gua</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Água</IRI>
+        <Literal xml:lang="pt">Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Código 1.04.3 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Lago/Lagoa</IRI>
+        <Literal xml:lang="pt">Depressão absoluta do solo, que não possui fluxo d’ água no seu interior.</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
