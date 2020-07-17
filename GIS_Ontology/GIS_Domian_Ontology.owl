@@ -47,7 +47,7 @@
         <Class IRI="#Laguna"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Lagura_média"/>
+        <Class IRI="#Largura_média"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Massa_Dágua"/>
@@ -65,7 +65,7 @@
         <Class IRI="#Porto"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Profunidade_média"/>
+        <Class IRI="#Profundidade_média"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Pátio"/>
@@ -178,14 +178,14 @@
         <Class IRI="http://purl.obolibrary.org/obo/GEO_000000373"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000086"/>
-            <Class IRI="#Lagura_média"/>
+            <Class IRI="#Largura_média"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://purl.obolibrary.org/obo/GEO_000000373"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000086"/>
-            <Class IRI="#Profunidade_média"/>
+            <Class IRI="#Profundidade_média"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -242,8 +242,8 @@
         <Class IRI="#Trecho_Massa_Dágua"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Lagura_média"/>
-        <Class IRI="http://purl.obolibrary.org/obo/PATO_0000921"/>
+        <Class IRI="#Largura_média"/>
+        <Class IRI="http://purl.obolibrary.org/obo/PATO_0045061"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Massa_Dágua"/>
@@ -311,8 +311,8 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Profunidade_média"/>
-        <Class IRI="http://purl.obolibrary.org/obo/PATO_0001595"/>
+        <Class IRI="#Profundidade_média"/>
+        <Class IRI="http://purl.obolibrary.org/obo/PATO_0045052"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Pátio"/>
@@ -713,7 +713,7 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
 http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         </Annotation>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#Lagura_média</IRI>
+        <IRI>#Largura_média</IRI>
         <Literal xml:lang="pt">Indica a largura média do trecho de drenagem, em metros.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -771,7 +771,7 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
 http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         </Annotation>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#Profunidade_média</IRI>
+        <IRI>#Profundidade_média</IRI>
         <Literal xml:lang="pt">Indica a profundidade média do trecho de drenagem, em metros.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>

@@ -7,7 +7,8 @@
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl" uri="http://purl.obolibrary.org/obo/bfo.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/geo.owl" uri="https://raw.githubusercontent.com/ufbmi/geographical-entity-ontology/master/geo.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1594563312073" name="http://purl.obolibrary.org/obo/geo.owl" uri="geo.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1594563312073" name="http://www.inf.ufrgs.br/bdi/ontologias/GIS_Domain_Ontology" uri="GIS_Domian_Ontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1594641474856" name="http://purl.obolibrary.org/obo/geo.owl" uri="geo.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1594641474856" name="duplicate:http://www.inf.ufrgs.br/bdi/ontologias/GIS_Domain_Ontology" uri="GIS_Domian_Ontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1594641474856" name="duplicate:http://www.inf.ufrgs.br/bdi/ontologias/GIS_Domain_Ontology" uri="GIS_Domian_Ontology_before_IAO.owl"/>
     </group>
 </catalog>
