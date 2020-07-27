@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.inf.ufrgs.br/bdi/ontologias/UFRGS_GIS_Ontology">
-    <Prefix name="" IRI="http://www.inf.ufrgs.br/bdi/ontologias/UFRGS_GIS_Ontology"/>
+    <Prefix name="" IRI="http://www.inf.ufrgs.br/bdi/ontologias/GIS_Domain_Ontology"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -23,13 +23,16 @@
         <Literal xml:lang="pt">Ontologia para especificaão de Domínio aplicado ao Mapeamento Topográfico e outras aplicações GIS.</Literal>
     </Annotation>
     <Declaration>
+        <Class IRI="#Largura_média"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Profundidade_média"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Salinidade"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Velocidade_média_corrente"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#aquisição_vetorial"/>
     </Declaration>
     <Declaration>
         <Class IRI="#baía"/>
@@ -56,13 +59,7 @@
         <Class IRI="#edificação"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#edição_cartográfica"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#floresta"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#impressão"/>
     </Declaration>
     <Declaration>
         <Class IRI="#lago"/>
@@ -75,9 +72,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#map"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#mapeamento"/>
     </Declaration>
     <Declaration>
         <Class IRI="#massa_dágua"/>
@@ -101,7 +95,7 @@
         <Class IRI="#regime_hidrológico"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#representacao_cartográfica"/>
+        <Class IRI="#representacao_geográfica"/>
     </Declaration>
     <Declaration>
         <Class IRI="#representação_de_edficação"/>
@@ -134,15 +128,6 @@
         <Class IRI="#trecho_massa_dágua"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#valid_2-D_shape"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#validação_vetorial"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#vegetação"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#vertedouro"/>
     </Declaration>
     <Declaration>
@@ -170,19 +155,7 @@
         <ObjectProperty IRI="#equals"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#has_bigger_saturation_of"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#intersects"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#is_a_representation_of"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#is_bigger_than"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#is_wider_than"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#topological_contains"/>
@@ -259,6 +232,14 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Largura_média"/>
+        <Class IRI="http://purl.obolibrary.org/obo/PATO_0045061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Profundidade_média"/>
+        <Class IRI="http://purl.obolibrary.org/obo/PATO_0045052"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Salinidade"/>
         <Class IRI="http://purl.obolibrary.org/obo/PATO_0000033"/>
     </SubClassOf>
@@ -271,24 +252,6 @@
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000086"/>
             <Class IRI="#Velocidade_média_corrente"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#aquisição_vetorial"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#aquisição_vetorial"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
-            <Class IRI="http://purl.obolibrary.org/obo/IAO_0000101"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#aquisição_vetorial"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
-            <Class IRI="#representacao_cartográfica"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -345,64 +308,14 @@
         <Class IRI="http://purl.obolibrary.org/obo/GEO_000000371"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#edição_cartográfica"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#edição_cartográfica"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
-            <Class IRI="#validação_vetorial"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#edição_cartográfica"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
-            <Class IRI="#representacao_cartográfica"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#edição_cartográfica"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
-            <Class IRI="#map"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#floresta"/>
-        <Class IRI="#vegetação"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000027"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#floresta"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002351"/>
             <Class IRI="#árvore"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#impressão"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#impressão"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
-            <Class IRI="#edição_cartográfica"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#impressão"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
-            <Class IRI="#map"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#impressão"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
-            <Class IRI="#map"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -422,38 +335,6 @@
         <Class IRI="http://purl.obolibrary.org/obo/IAO_0000308"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#mapeamento"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#mapeamento"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <Class IRI="#aquisição_vetorial"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#mapeamento"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <Class IRI="#edição_cartográfica"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#mapeamento"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <Class IRI="#impressão"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#mapeamento"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000051"/>
-            <Class IRI="#validação_vetorial"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#massa_dágua"/>
         <Class IRI="http://purl.obolibrary.org/obo/GEO_000000373"/>
     </SubClassOf>
@@ -463,14 +344,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ponto_drenagem"/>
-        <Class IRI="#representacao_cartográfica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ponto_drenagem"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
-            <Class IRI="#trecho_drenagem"/>
-        </ObjectSomeValuesFrom>
+        <Class IRI="#representacao_geográfica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ponto_início_drenagem"/>
@@ -534,95 +408,28 @@
         <Class IRI="http://purl.obolibrary.org/obo/PATO_0001030"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#representacao_cartográfica"/>
+        <Class IRI="#representacao_geográfica"/>
         <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#representacao_cartográfica"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000086"/>
-            <Class IRI="http://purl.obolibrary.org/obo/PATO_0000014"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#representacao_cartográfica"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000086"/>
-            <Class IRI="http://purl.obolibrary.org/obo/PATO_0002006"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#representação_de_edficação"/>
-        <Class IRI="#representacao_cartográfica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#representação_de_edficação"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
-            <Class IRI="#edificação"/>
-        </ObjectSomeValuesFrom>
+        <Class IRI="#representacao_geográfica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#representação_de_massa_dágua"/>
-        <Class IRI="#representacao_cartográfica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#representação_de_massa_dágua"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
-            <Class IRI="#massa_dágua"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#representação_de_massa_dágua"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000086"/>
-            <Class IRI="http://purl.obolibrary.org/obo/PATO_0001243"/>
-        </ObjectSomeValuesFrom>
+        <Class IRI="#representacao_geográfica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#representação_de_outras_estruturas"/>
-        <Class IRI="#representacao_cartográfica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#representação_de_outras_estruturas"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
-            <ObjectUnionOf>
-                <Class IRI="#berço_de_atracação"/>
-                <Class IRI="#porto"/>
-                <Class IRI="#pátio"/>
-            </ObjectUnionOf>
-        </ObjectSomeValuesFrom>
+        <Class IRI="#representacao_geográfica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#representação_de_trecho_massa_dágua"/>
-        <Class IRI="#representacao_cartográfica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#representação_de_trecho_massa_dágua"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
-            <Class IRI="#trecho_massa_dágua"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#representação_de_trecho_massa_dágua"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0000086"/>
-            <Class IRI="http://purl.obolibrary.org/obo/PATO_0001244"/>
-        </ObjectSomeValuesFrom>
+        <Class IRI="#representacao_geográfica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#representação_de_vegetação"/>
-        <Class IRI="#representacao_cartográfica"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#representação_de_vegetação"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000136"/>
-            <Class IRI="#vegetação"/>
-        </ObjectSomeValuesFrom>
+        <Class IRI="#representacao_geográfica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#rio"/>
@@ -637,15 +444,8 @@
         <Class IRI="#map"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#topographic_map"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0001019"/>
-            <Class IRI="#representacao_cartográfica"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#trecho_drenagem"/>
-        <Class IRI="#representacao_cartográfica"/>
+        <Class IRI="#representacao_geográfica"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#trecho_drenagem"/>
@@ -680,48 +480,12 @@
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#valid_2-D_shape"/>
-        <Class IRI="http://purl.obolibrary.org/obo/PATO_0002006"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#validação_vetorial"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#validação_vetorial"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
-            <Class IRI="#aquisição_vetorial"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#validação_vetorial"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000293"/>
-            <Class IRI="#representacao_cartográfica"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#validação_vetorial"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://purl.obolibrary.org/obo/OBI_0000299"/>
-            <ObjectIntersectionOf>
-                <Class IRI="#representacao_cartográfica"/>
-                <Class IRI="#valid_2-D_shape"/>
-            </ObjectIntersectionOf>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#vegetação"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000027"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#vertedouro"/>
         <Class IRI="http://purl.obolibrary.org/obo/GEO_000000371"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#água"/>
-        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000030"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000024"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#água_superficial"/>
@@ -771,16 +535,12 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#condomínio"/>
+        <Class IRI="#floresta"/>
         <Class IRI="#porto"/>
-        <Class IRI="#vegetação"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#confluência"/>
         <Class IRI="#ponto_início_drenagem"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#floresta"/>
-        <Class IRI="#árvore"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#massa_dágua"/>
@@ -798,10 +558,6 @@
     <DisjointClasses>
         <Class IRI="#sumidouro"/>
         <Class IRI="#vertedouro"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#água"/>
-        <Class IRI="#árvore"/>
     </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#canal"/>
@@ -860,20 +616,8 @@
         <ObjectProperty IRI="#topological_related_to"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#has_bigger_saturation_of"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#intersects"/>
         <ObjectProperty IRI="#topological_related_to"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#is_bigger_than"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#is_wider_than"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#topological_contains"/>
@@ -934,15 +678,6 @@
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002473"/>
     </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#has_bigger_saturation_of"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#is_bigger_than"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#is_wider_than"/>
-    </AsymmetricObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002473"/>
     </TransitiveObjectProperty>
@@ -954,15 +689,6 @@
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#equals"/>
-    </TransitiveObjectProperty>
-    <TransitiveObjectProperty>
-        <ObjectProperty IRI="#has_bigger_saturation_of"/>
-    </TransitiveObjectProperty>
-    <TransitiveObjectProperty>
-        <ObjectProperty IRI="#is_bigger_than"/>
-    </TransitiveObjectProperty>
-    <TransitiveObjectProperty>
-        <ObjectProperty IRI="#is_wider_than"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#topological_contains"/>
@@ -995,10 +721,6 @@
         <ObjectProperty IRI="#disjoint"/>
     </IrreflexiveObjectProperty>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#has_bigger_saturation_of"/>
-        <Class IRI="http://purl.obolibrary.org/obo/PATO_0000014"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#topological_related_to"/>
         <Class IRI="http://purl.obolibrary.org/obo/GEO_000000370"/>
     </ObjectPropertyDomain>
@@ -1010,10 +732,6 @@
         <ObjectProperty IRI="#topological_related_to"/>
         <Class IRI="#trecho_drenagem"/>
     </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#has_bigger_saturation_of"/>
-        <Class IRI="http://purl.obolibrary.org/obo/PATO_0000014"/>
-    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#topological_related_to"/>
         <Class IRI="http://purl.obolibrary.org/obo/GEO_000000370"/>
@@ -1048,6 +766,26 @@
     <AnnotationAssertion>
         <Annotation>
             <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Código 1.07.13 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Largura_média</IRI>
+        <Literal xml:lang="pt">Indica a largura média do trecho de drenagem, em metros.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
+            <Literal>Código 1.07.13 – EDGV 2.1.3
+http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
+        </Annotation>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <IRI>#Profundidade_média</IRI>
+        <Literal xml:lang="pt">Indica a profundidade média do trecho de drenagem, em metros.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <Annotation>
+            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
             <Literal>Código 1.05.5 – EDGV 2.1.3
 http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         </Annotation>
@@ -1064,20 +802,6 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#Velocidade_média_corrente</IRI>
         <Literal xml:lang="pt">Indica a velocidade média da corrente no trecho de drenagem, em nós.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal>bdgex.eb.mil.br</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#aquisição_vetorial</IRI>
-        <Literal xml:lang="pt">Processo que consiste em adquirir a geometria de feições do terreno a partir de um imagens orientadas.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#aquisição_vetorial</IRI>
-        <Literal xml:lang="pt">aquisição</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
@@ -1169,11 +893,6 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         <Literal xml:lang="pt">condomínio</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#confluência</IRI>
-        <Literal xml:lang="pt">ponto de encontro da representação de três trechos de drenagem</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <Annotation>
             <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
             <Literal>Código 1.16 – EDGV 2.1.3
@@ -1182,11 +901,6 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#confluência</IRI>
         <Literal xml:lang="pt">Junção de dois ou mais cursos d’água ou ainda a convergência para uma massa d’água, exceto baía, oceano ou enseada.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#confluência</IRI>
-        <Literal xml:lang="pt">confluência</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <Annotation>
@@ -1267,20 +981,6 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
     <AnnotationAssertion>
         <Annotation>
             <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>bdgex.eb.mil.br</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#edição_cartográfica</IRI>
-        <Literal xml:lang="pt">Processo que consiste na aplicação das representações cartograficas segundo o T-34-700 e a ET-RDG, além da aplicação dos conceito de representaćão cartográfica para legibilidade de mapas.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#edição_cartográfica</IRI>
-        <Literal xml:lang="pt">edição</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
             <Literal>https://en.wikipedia.org/wiki/DE-9IM</Literal>
         </Annotation>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -1308,41 +1008,6 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         <Literal xml:lang="pt">floresta</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#has_bigger_saturation_of</IRI>
-        <Literal xml:lang="pt">A cor azul escuro tem mais saturação que a cor azul claro</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>https://pt.wikipedia.org/wiki/Satura%C3%A7%C3%A3o</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#has_bigger_saturation_of</IRI>
-        <Literal xml:lang="pt">No modelo HSV, ter maior saturação ou grau de pureza da cor é uma referencia ao parâmetro que especifica a qualidade de um matiz de cor pelo grau de mesclagem do matiz com a cor branca. Ter maior saturação é estar mais próximo da matiz pura, ou maior intencidade da matiz da cor.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#has_bigger_saturation_of</IRI>
-        <Literal xml:lang="pt">tem mais saturação que</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>https://dicionario.priberam.org/imprimir</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#impressão</IRI>
-        <Literal xml:lang="pt">Deixar representado e gravado (por meio de pressão).
-Estampar.
-Publicar; editar.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#impressão</IRI>
-        <Literal xml:lang="pt">impressão</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <Annotation>
             <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
             <Literal>https://en.wikipedia.org/wiki/DE-9IM</Literal>
@@ -1350,63 +1015,6 @@ Publicar; editar.</Literal>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#intersects</IRI>
         <Literal xml:lang="en">a intersects b: geometries a and b have at least one point in common.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal>https://dicionario.priberam.org/representa%c3%a7%c3%a3o</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#is_a_representation_of</IRI>
-        <Literal xml:lang="pt">Expressão ou tradução de um contexto por meio de símbolos</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-        <IRI>#is_a_representation_of</IRI>
-        <Literal xml:lang="pt">A carta topográfica 2987-2 é a representação cartográfica de Porto Alegre na escala 1:50.000</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#is_a_representation_of</IRI>
-        <Literal xml:lang="pt">é a representação de</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#is_bigger_than</IRI>
-        <Literal xml:lang="pt">O objeto A é tem maior comprimento e largura que o obejto B</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>https://dicionario.priberam.org/maior</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#is_bigger_than</IRI>
-        <Literal xml:lang="pt">Que excede outro em quantidade, volume, extensão, intensidade ou duração.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#is_bigger_than</IRI>
-        <Literal xml:lang="pt">maior que</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#is_wider_than</IRI>
-        <Literal xml:lang="pt">o obejto A é mais largo que o obejto B</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-            <Literal>https://pt.wikipedia.org/wiki/Largura</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#is_wider_than</IRI>
-        <Literal xml:lang="pt">Sendo a largura designada como a medida de uma distância que é perpendicular ao comprimento, a relação &quot;mais largo que&quot; denota a compreenção que entre dois obejtos, um deles tem uma medida de largura que é maior, tomando por base a mesma escala de medida.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#is_wider_than</IRI>
-        <Literal xml:lang="pt">mais largo que</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
@@ -1469,13 +1077,6 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         <Literal xml:lang="pt">laguna</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#map</IRI>
-        <Literal xml:lang="pt">Mapa de Regiões do Brasil,
-Carta Topográfica Porto Alegre,
-Carta Náutica</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <Annotation>
             <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
             <Literal>https://en.wikipedia.org/wiki/Map</Literal>
@@ -1488,21 +1089,6 @@ Carta Náutica</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#map</IRI>
         <Literal xml:lang="pt">mapa</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>https://dicionario.priberam.org/mapear</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#mapeamento</IRI>
-        <Literal xml:lang="pt">Representar através de mapa(s).
-Fazer uma representação gráfica das diversas partes de um todo.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#mapeamento</IRI>
-        <Literal xml:lang="pt">mapeamento</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
@@ -1545,28 +1131,13 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         <Literal xml:lang="pt">oceano</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#ponto_drenagem</IRI>
-        <Literal xml:lang="pt">ponto ao início e ao fim de cada trecho de drenagem</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <Annotation>
             <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
             <Literal>Código 1.08 – EDGV 2.1.3 http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         </Annotation>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#ponto_drenagem</IRI>
-        <Literal xml:lang="pt">Ponto ao início e ao fim de cada trecho de drenagem. Ponto de conectividade entre dois trechos de drenagem ou mais.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#ponto_drenagem</IRI>
-        <Literal xml:lang="pt">ponto de drenagem</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#ponto_início_drenagem</IRI>
-        <Literal xml:lang="pt">ponto onde inicia a representação de um rio</Literal>
+        <Literal xml:lang="pt">Ponto de conectividade entre dois trechos de drenagem ou mais.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <Annotation>
@@ -1577,11 +1148,6 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#ponto_início_drenagem</IRI>
         <Literal xml:lang="pt">Ponto onde se inicia um trecho de drenagem, podendo ser uma nascente ou não.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#ponto_início_drenagem</IRI>
-        <Literal xml:lang="pt">ponto de início de drenagem</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
@@ -1634,130 +1200,6 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#representacao_cartográfica</IRI>
-        <Literal xml:lang="pt">formas geométricas presentes em mapas</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000116"/>
-            <Literal>http://www.geoportal.eb.mil.br/portal/images/PDF/ET_ADGV_Vs_2_1_3.pdf</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#representacao_cartográfica</IRI>
-        <Literal xml:lang="pt">Forma pela qual as informações geoespaciais referentes as feições do terreno são transmitidas ao usuário pelo posicionamento da sua geometria, traçada com pontos, linhas ou polígonos.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#representacao_cartográfica</IRI>
-        <Literal xml:lang="pt">representação cartográfica</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#representação_de_edficação</IRI>
-        <Literal xml:lang="pt">pequeno quadrado ou forma geométrica irregular presente em mapas em tom variados que representam edificações</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>http://www.geoportal.eb.mil.br/portal/images/PDF/ET_ADGV_Vs_2_1_3.pdf
-http://www.geoportal.eb.mil.br/portal/images/PDF/T_34700_P1.pdf 
-http://www.geoportal.eb.mil.br/portal/images/PDF/T_34700_P2.pdf</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#representação_de_edficação</IRI>
-        <Literal xml:lang="pt">Representação cartográfica em forma de ponto ou área e que simboliza uma edificação</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#representação_de_edficação</IRI>
-        <Literal xml:lang="pt">representação de edificação</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#representação_de_massa_dágua</IRI>
-        <Literal xml:lang="pt">forma geométrica irregular presente em mapas em tom azul que representa uma oceano</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>http://www.geoportal.eb.mil.br/portal/images/PDF/ET_ADGV_Vs_2_1_3.pdf
-http://www.geoportal.eb.mil.br/portal/images/PDF/T_34700_P1.pdf 
-http://www.geoportal.eb.mil.br/portal/images/PDF/T_34700_P2.pdf</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#representação_de_massa_dágua</IRI>
-        <Literal xml:lang="pt">Representação cartográfica em forma de área e que simboliza uma massa dágua</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#representação_de_massa_dágua</IRI>
-        <Literal xml:lang="pt">representação de massa dágua</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#representação_de_outras_estruturas</IRI>
-        <Literal xml:lang="pt">pequeno quadrado ou forma geométrica irregular presente em mapas em tom variados que representam diversas estruturas como pátios e berços de atracação</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>http://www.geoportal.eb.mil.br/portal/images/PDF/ET_ADGV_Vs_2_1_3.pdf
-http://www.geoportal.eb.mil.br/portal/images/PDF/T_34700_P1.pdf 
-http://www.geoportal.eb.mil.br/portal/images/PDF/T_34700_P2.pdf</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#representação_de_outras_estruturas</IRI>
-        <Literal xml:lang="pt">Representação cartográfica em forma de ponto, linha ou área e que pode simbolizar diversas estruturas</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#representação_de_outras_estruturas</IRI>
-        <Literal xml:lang="pt">representação de outras estruturas</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#representação_de_trecho_massa_dágua</IRI>
-        <Literal xml:lang="pt">forma geométrica irregular presente em mapas em tom azul que representa uma rio</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>http://www.geoportal.eb.mil.br/portal/images/PDF/ET_ADGV_Vs_2_1_3.pdf
-http://www.geoportal.eb.mil.br/portal/images/PDF/T_34700_P1.pdf 
-http://www.geoportal.eb.mil.br/portal/images/PDF/T_34700_P2.pdf</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#representação_de_trecho_massa_dágua</IRI>
-        <Literal xml:lang="pt">Representação cartográfica em forma de área e que simboliza um trecho de massa dágua</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#representação_de_trecho_massa_dágua</IRI>
-        <Literal xml:lang="pt">representação de trecho de massa dágua</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#representação_de_vegetação</IRI>
-        <Literal xml:lang="pt">forma geométrica irregular presente em mapas em tom verde que representa uma floresta</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>http://www.geoportal.eb.mil.br/portal/images/PDF/ET_ADGV_Vs_2_1_3.pdf
-http://www.geoportal.eb.mil.br/portal/images/PDF/T_34700_P1.pdf 
-http://www.geoportal.eb.mil.br/portal/images/PDF/T_34700_P2.pdf</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#representação_de_vegetação</IRI>
-        <Literal xml:lang="pt">Representação cartográfica em forma de área e que simboliza uma vegetação</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#representação_de_vegetação</IRI>
-        <Literal xml:lang="pt">representação de vegetação</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
         <IRI>#rio</IRI>
         <Literal xml:lang="pt">Rio Tietê</Literal>
     </AnnotationAssertion>
@@ -1795,11 +1237,6 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#sumidouro</IRI>
         <Literal xml:lang="pt">sumidouro</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#topographic_map</IRI>
-        <Literal xml:lang="pt">Carta Topográfica 1:25.000 MI 2906-3 Lages</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <Annotation>
@@ -1853,11 +1290,6 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         <Literal xml:lang="en">a touches b: they have at least one point in common, but their interiors do not intersect.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#trecho_drenagem</IRI>
-        <Literal xml:lang="pt">linha em tom azul que consta na carta que representa um pequeno rio</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <Annotation>
             <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
             <Literal>Adaptado de Código 1.07 – EDGV 2.1.3
@@ -1866,11 +1298,6 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <IRI>#trecho_drenagem</IRI>
         <Literal xml:lang="pt">Corresponde ao eixo do corpo d’água, cuja geometria do tipo linha representa o fluxo d’água, permanente ou temporário, contido ou coincidente com um trecho de massa d’água capturado como linha, em função da escala de aquisição.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#trecho_drenagem</IRI>
-        <Literal xml:lang="pt">trecho de drenagem</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
@@ -1891,53 +1318,6 @@ http://www.geoportal.eb.mil.br/portal/images/PDF/ET_EDGV_Vs_2_1_3.pdf</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#trecho_massa_dágua</IRI>
         <Literal xml:lang="pt">trcho de massa dágua</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>http://portal.opengeospatial.org/files/?artifact_id=25355</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#valid_2-D_shape</IRI>
-        <Literal xml:lang="pt">Formato em 2-D que não atende as especificações da OGC Simple Features</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#valid_2-D_shape</IRI>
-        <Literal xml:lang="pt">formato 2d válido</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>bdgex.eb.mil.br</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#validação_vetorial</IRI>
-        <Literal xml:lang="pt">Processo que consiste na conferencia todos os procedimentos executados no processo de aquisição. Em especial é checada a aderência  ao modelo de dados em trebalho e a validade dos dados segundo a OGC Simple Feature.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#validação_vetorial</IRI>
-        <Literal xml:lang="pt">validação</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>
-        <IRI>#vegetação</IRI>
-        <Literal xml:lang="pt">Florestas, Tundras, Cultivos</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <Annotation>
-            <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000119"/>
-            <Literal>https://pt.wikipedia.org/wiki/Vegeta%C3%A7%C3%A3o</Literal>
-        </Annotation>
-        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <IRI>#vegetação</IRI>
-        <Literal xml:lang="pt">Vegetação é um termo geral para a vida vegetal de uma região; isso se refere às formas de vida que cobrem os solos, às estruturas espaciais ou qualquer outra medida específica ou geográfica que possua características botânicas.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#vegetação</IRI>
-        <Literal xml:lang="pt">vegetação</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000112"/>

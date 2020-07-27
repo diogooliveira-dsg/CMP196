@@ -376,31 +376,10 @@ For a full list of PURLs, see the geo.yml file here: https://raw.githubuserconte
         <AnnotationProperty abbreviatedIRI="oboInOwl:inSubset"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="obo:IAO_0000412"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="obo:IAO_0000117"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="obo:IAO_0000115"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="obo:IAO_0000232"/>
-    </Declaration>
-    <Declaration>
         <AnnotationProperty abbreviatedIRI="dc:title"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="terms:license"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="obo:BFO_0000179"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="obo:IAO_0000602"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="obo:IAO_0000601"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dc:creator"/>
@@ -410,9 +389,6 @@ For a full list of PURLs, see the geo.yml file here: https://raw.githubuserconte
     </Declaration>
     <Declaration>
         <Class abbreviatedIRI="obo:IAO_0000027"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="obo:BFO_0000180"/>
     </Declaration>
     <EquivalentClasses>
         <Class abbreviatedIRI="obo:GEO_000000002"/>
@@ -3568,7 +3544,7 @@ for now.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="oboInOwl:hasDefinition"/>
         <AbbreviatedIRI>oboInOwl:ObsoleteClass</AbbreviatedIRI>
-        <AnonymousIndividual nodeID="_:genid2147484331"/>
+        <AnonymousIndividual nodeID="_:genid2147483871"/>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
