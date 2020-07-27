@@ -352,7 +352,10 @@
         <Class IRI="#edição_cartográfica"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000062"/>
-            <Class IRI="#validação_vetorial"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#valid_2-D_shape"/>
+                <Class IRI="#validação_vetorial"/>
+            </ObjectIntersectionOf>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -936,6 +939,9 @@
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#has_bigger_saturation_of"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#is_a_representation_of"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#is_bigger_than"/>
