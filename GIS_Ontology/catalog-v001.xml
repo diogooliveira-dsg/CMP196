@@ -8,9 +8,17 @@
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl" uri="http://purl.obolibrary.org/obo/bfo.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/geo.owl" uri="https://raw.githubusercontent.com/ufbmi/geographical-entity-ontology/master/geo.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1595846894819" name="http://purl.obolibrary.org/obo/geo.owl" uri="geo.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1595846894819" name="http://www.inf.ufrgs.br/bdi/ontologias/GIS_Domain_Ontology" uri="GIS_Domian_Ontology_before_IAO.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1595846894819" name="duplicate:http://www.inf.ufrgs.br/bdi/ontologias/UFRGS_GIS_Ontology" uri="GIS_Domian_Ontology.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1595846894819" name="duplicate:http://www.inf.ufrgs.br/bdi/ontologias/UFRGS_GIS_Ontology" uri="GIS_Domian_Ontology_v1.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1596113645385" name="http://purl.obolibrary.org/obo/geo.owl" uri="cleaned/Geo_Cleaned.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1596113645385" name="http://purl.obolibrary.org/obo/iao.owl" uri="cleaned/IAO_Cleaned.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1596113645385" name="http://purl.obolibrary.org/obo/pato.owl" uri="cleaned/PATO_Cleaned.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1596113645385" name="http://purl.obolibrary.org/obo/ro.owl" uri="cleaned/RO_Cleaned.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1596113645385" name="http://purl.obolibrary.org/obo/ro/bfo-classes-minimal.owl" uri="cleaned/BFO_Minimal_Cleaned.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1596113645385" name="http://purl.obolibrary.org/obo/ro/core.owl" uri="cleaned/Core_Cleaned.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1596113645385" name="http://purl.obolibrary.org/obo/ro/go-biotic.owl" uri="cleaned/GO_Biotic_Cleaned.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1596113645385" name="http://purl.obolibrary.org/obo/ro/go_cc_import.owl" uri="cleaned/GO_CC_import_Cleaned.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1596113645385" name="http://purl.obolibrary.org/obo/ro/go_mf_import.owl" uri="cleaned/GO_MF_Import_Cleaned.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1596113645385" name="http://purl.obolibrary.org/obo/ro/other_import.owl" uri="cleaned/Other_import_Cleaned.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1596113645385" name="http://www.inf.ufrgs.br/bdi/ontologias/UFRGS_GIS_Ontology" uri="GIS_Domian_Ontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1596113645385" name="shadowed:http://www.inf.ufrgs.br/bdi/ontologias/UFRGS_GIS_Ontology" uri="cleaned/GIS_Domian_Ontology_Cleaned.owl"/>
     </group>
 </catalog>
